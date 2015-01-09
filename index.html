@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/koalamall.css" rel="stylesheet"/>
+    <script type="text/javascript">
+		mui.init();
+    </script>
+</head>
+<body>
+	<div class="mui-content" id="content">
+		<nav class="mui-bar koa-bar-tab mui-bar-tab" >
+			<a id="defaultTab" class="koa-tab-item mui-tab-item koa-active mui-active" href="./view/main.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="koa-tab-item mui-tab-item" href="./view/groupbuy.html">
+				<span class="mui-icon mui-icon-reload"></span>
+				<span class="mui-tab-label">定时抢购</span>
+			</a>
+			<a class=" koa-tab-item mui-tab-item" href="./view/category.html">
+				<span class="mui-icon mui-icon-list"></span>
+				<span class="mui-tab-label">分类</span>
+			</a>
+			<a class="koa-tab-item mui-tab-item" href="./view/shoppingcart.html" >
+				<span class="mui-icon mui-icon-download"></span>
+				<span class="mui-tab-label">购物车</span>
+			</a>
+			<a class="koa-tab-item mui-tab-item" href="./view/usercenter.html" >
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">我的考拉</span>
+			</a>
+		</nav>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+      	var subpages = ['./view/main.html','./view/groupbuy.html','./view/category.html','./view/shoppingcart.html','./view/usercenter.html'];
+		var subpage_style = {
+			top: '0px',
+			bottom: '50px'
+		};
+		//创建子页面，首个选项卡页面显示，其它均隐藏；
+		mui.plusReady(function(){
+			var self = plus.webview.currentWebview();
+			for(var i=0;i<5;i++){
+				var sub = plus.webview.create(subpages[i],subpages[i],subpage_style);
+				if(i>0){
+					sub.hide();
+				}
+				self.append(sub);
+			}
+		});
+		//当前激活选项，默认为第一个；
+		var activeTab = subpages[0];
+		//选项卡点击事件
+		mui('.mui-bar-tab').on('tap', 'a', function(e) {
+			var targetTab = this.getAttribute('href');
+			if (targetTab == activeTab) {
+				return;
+			}
+			//先隐藏当前的
+			plus.webview.hide(activeTab);
+			//再显示目标
+			plus.webview.show(targetTab);
+			//更改当前活跃的选项卡
+			activeTab = targetTab;
+		});
+    </script>
+</body>
+</html>

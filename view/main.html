@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title></title>
+	    <script src="../js/mui.min.js"></script>
+	    <link href="../css/mui.min.css" rel="stylesheet"/>
+	    <link href="../css/koalamall.css" rel="stylesheet"/>
+	    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<style>
+		    .mui-segmented-control{
+		        background-color: #f6f6f6;
+		        border: 0;
+		    }
+		    .mui-segmented-control .mui-control-item{
+		        border: 0;
+		    }
+		    .mui-segmented-control .mui-control-item:active,.mui-segmented-control .mui-control-item.mui-active{
+		        background-color: #f6f6f6;
+		    }
+		    .mui-segmented-control .mui-control-item.mui-active .mui-btn{
+		        color: #fff;
+		        background-color: #ee574f;
+		        border-color: #ee574f;
+		    }
+		    .mui-segmented-control .mui-control-item .mui-block{
+		        color:#a7a7a7;      
+		        margin-top: 5px;
+		    }
+		
+		    .mui-h5,.mui-h6{
+		        margin-top: 0;
+		    }
+		    .mui-input-row label{
+		        width: 45%;
+		    }
+		    .oa-mute{
+		        color:#8f8f94;
+		    }
+		
+		    .mui-control-item .mui-block{
+		        overflow: hidden;
+		        text-overflow:ellipsis;
+		        white-space: nowrap;
+		    }
+		
+		</style>
+	</head>
+	<body>
+	<header class="koa-bar-nav mui-bar mui-bar-nav ">
+		<a class="mui-icon mui-icon-flag koa-pull-left mui-pull-left"></a>
+		<a class="mui-icon mui-icon-search koa-pull-right mui-pull-right"></a>
+		<a class="mui-icon mui-icon-bars koa-pull-right mui-pull-right" ></a>
+		<h1 class="koa-title mui-title">考拉商城</h1>
+	</header>
+	<div class="mui-content">
+		<div class="mui-slider" id="slider">
+		  <div class="mui-slider-group mui-slider-loop" >
+		    <div class="mui-slider-item mui-slider-item-duplicate" >
+		    	<a href="#">
+		    		<img src="../images/slider-1.png" height="200px;"/>
+		    		<p class="mui-slider-title">静静看这世界</p>
+		    	</a>
+		    </div>
+		    <div class="mui-slider-item">
+		    	<a href="#">
+		    		<img src="../images/slider-2.jpg" height="200px;" />
+		    		<p class="mui-slider-title">hello</p>
+		    	</a>
+		    </div>
+		    <div class="mui-slider-item">
+		    	<a href="#">
+		    		<img src="../images/slider-3.jpg" height="200px;"/>
+		    		<p class="mui-slider-title">test</p>
+		    	</a>
+		    </div>
+		    <div class="mui-slider-item">
+		    	<a href="#">
+		    		<img src="../images/slider-1.jpg" height="200px;"/><p class="mui-slider-title">想要一间这样的木屋，静静的喝咖啡</p>
+		    	</a>
+		    </div>
+		    <div class="mui-slider-item">
+		    	<a href="#">
+		    		<img src="../images/slider-1.png" height="200px;" />
+		    		<p class="mui-slider-title">静静看这世界</p>
+		    	</a>
+		    </div>
+		 	<div class="mui-slider-item mui-slider-item-duplicate">
+		    	<a href="#">
+		    		<img src="../images/slider-2.jpg" height="200px;" />
+		    		<p class="mui-slider-title">hello</p>
+		    	</a>
+		    </div>
+		  </div>
+		  <div class="mui-slider-indicator mui-text-right">
+			<div class="mui-indicator mui-active"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+		  </div>
+		</div>
+
+		<div class="mui-segmented-control" id="buttonId">
+		        <a class="mui-control-item mui-active" href="groupbuy.html">
+		            <button class="mui-btn mui-fab mui-btn-mini">
+		                <span class="mui-icon mui-icon-loop"></span>
+		            </button>
+		            <span class="mui-block">闪购</span>
+		        </a>
+		        <a class="mui-control-item" href="category.html">
+		            <span class="mui-btn mui-fab mui-btn-mini">
+		                <span class="mui-icon mui-icon-star"></span>
+		            </span>
+		            <span class="mui-block">分类</span>
+		        </a>
+		        <a class="mui-control-item" href="#item3mobile">
+		            <span class="mui-btn mui-fab mui-btn-mini">
+		                <span class="mui-icon mui-icon-paperclip"></span>
+		            </span>
+		            <span class="mui-block">考拉最爱</span>
+		        </a>
+		        <a class="mui-control-item" href="#item4mobile">
+		            <span class="mui-btn mui-fab mui-btn-mini">
+		                <span class="mui-icon mui-icon-settings"></span>
+		            </span>
+		            <span class="mui-block">现金券</span>
+		        </a>
+		    </div>
+		    
+		<div style="height: 37px; background-color: #FFFFFF;padding-bottom:5px;">
+		    	<h5 style="padding-left: 10px;background-color:#FFFFFF;padding-top: 5px;color: #000000;float: left;">掌上秒杀</h5>
+	    		<span class="mui-icon mui-icon-info" style="float: left;padding-top: 5px;"></span>
+	    		<div style="float: left;padding-top: 8px;" id="timeDiv">
+		    		<span class="koa-index-time">00</span>&nbsp;:
+		    		<span class="koa-index-time">00</span>&nbsp;:
+		    		<span class="koa-index-time">00</span>
+	    		</div>
+	    </div>
+			
+		<ul class="mui-table-view mui-grid-view">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/b.jpg">
+		                <div class="mui-media-body" style="color: red;">$190.00</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/c.jpg">
+		                <div class="mui-media-body" style="color: red;">$190.00</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4">
+		            <a href="#"><img class="mui-media-object" src="../images/d.jpg">
+		                <div class="mui-media-body" style="color: red;">$190.00</div></a></li>
+		    </ul>    
+		
+		<div id="output">
+XMLHttpRequest管理网络请求操作，可进行跨域网络数据请求。
+		</div>
+		<div style="height: 37px; background-color: #FFFFFF;padding-bottom:5px;align-content: center;">
+	    	<h5 style="padding-left: 10px;background-color:#FFFFFF;padding-top: 10px;color: #000000;align-content: center;">你的专属推荐
+	    	</h5>
+		</div>
+		<ul class="mui-table-view mui-grid-view">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6" >
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/c.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">是是</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/d.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">静静的喝咖啡</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#"><img class="mui-media-object" src="../images/b.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/d.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">静静看这世界</div></a></li>
+		                 <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#"><img class="mui-media-object" src="../images/b.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/d.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">静静看这世界</div></a></li>
+		                 <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#"><img class="mui-media-object" src="../images/b.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../images/d.jpg" style=" border: solid 1px #777777;">
+		                <div class="mui-media-body">静静看这世界</div></a></li>
+		    </ul>    
+	</div>
+	<script src="../controller/index.controller.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function($) {
+				mui.init({
+					preloadLimit: 3, //同时并存的预加载窗口数量
+					swipeBack: false,
+				});
+				$.plusReady(function() {
+					loadSeckillProduct();
+					var gallery = mui(".mui-slider");
+				  	gallery.slider({
+				  		interval:10000
+				  	});
+					//预加载共用父webview
+					var template = $.preload({
+						url:'template.html',
+						id:'demoTemplate',
+						styles:{
+							popGesture:"hide"
+						}
+					});
+					////预加载共用子webview
+					var subWebview = $.preload({
+						url:'category.html',
+						id:'template_sub',
+						styles:{
+							top: '0px',
+							bottom: '0px'
+						}
+					});
+					var waiting = null;
+					subWebview.addEventListener('loaded', function() {
+						setTimeout(function(){
+							subWebview.show();	
+						},50);
+					});
+					subWebview.hide();
+					plus.navigator.closeSplashscreen();
+					
+					//iOS平台支持侧滑关闭，父窗体侧滑隐藏后，同时需要隐藏子窗体；
+					if($.os.ios){
+						template.addEventListener('hide',function () {
+							subWebview.hide("none");
+						});
+					}
+
+					template.append(subWebview);
+					
+					if ($.os.android) {
+						var list = document.querySelectorAll('.ios-only');
+						if (list) {
+							for (var i = 0; i < list.length; i++) {
+								list[i].style.display = 'none';
+							}
+						}
+					}
+
+					$('#buttonId').on('tap', 'a', function() {
+						var id = this.getAttribute('href');
+						var type = this.getAttribute("open-type");
+						if(type=="common"){
+							if (~id.indexOf('offcanvas-')) {
+								var pop = ~id.indexOf('offcanvas-with-right')?"close":"none";
+								mui.openWindow({
+									id: id,
+									url: this.href,
+									styles: {
+										zindex: 9999,
+										popGesture:pop
+									},
+									waiting:{
+										autoShow:false
+									}
+								});
+							} else if(~id.indexOf('pullrefresh')){
+								mui.openWindow({
+									id: id,
+									url: id,
+									preload:true
+								});
+							}else{
+								mui.openWindow({
+									id: id,
+									url: this.href,
+									waiting:{
+										autoShow:false
+									}
+								});
+							}
+						}else{
+							if (id&&~id.indexOf('.html')) {
+								
+								var title = this.innerText;
+								template.evalJS("with(document.getElementById('title')){innerHTML='" + title + "';className='mui-title mui-fadein';};");
+								if(subWebview.getURL()==this.href){
+									subWebview.show();
+								}else{
+									subWebview.loadURL(this.href);
+								}
+								template.show('slide-in-right', 150);
+							}
+						}
+					});
+				});
+			})(mui);
+		
+		$(function() {
+			var target_date = new Date().getTime() + (1000*3600*10); // set the countdown date
+			var days, hours, minutes, seconds; // variables for time units
+		
+			var countdown = document.getElementById("timeDiv"); // get tag element
+		
+			getCountdown();
+		
+			setInterval(function () { getCountdown(); }, 1000);
+		
+			function getCountdown(){
+		
+				// find the amount of "seconds" between now and target
+				var current_date = new Date().getTime();
+				var seconds_left = (target_date - current_date) / 1000;
+		
+				days = pad( parseInt(seconds_left / 86400) );
+				seconds_left = seconds_left % 86400;
+				 
+				hours = pad( parseInt(seconds_left / 3600) );
+				seconds_left = seconds_left % 3600;
+				  
+				minutes = pad( parseInt(seconds_left / 60) );
+				seconds = pad( parseInt( seconds_left % 60 ) );
+		
+				// format countdown string + set tag value
+				countdown.innerHTML ="<span class=\"koa-index-time\">" + hours + "</span>&nbsp;:<span class=\"koa-index-time\">" + minutes + "</span>&nbsp;:<span class=\"koa-index-time\">" + seconds + "</span>"; 
+			}
+			function pad(n) {
+				return (n < 10 ? '0' : '') + n;
+			}
+		});
+	</script>
+	</body>
+</html>

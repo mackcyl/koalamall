@@ -1,0 +1,37 @@
+/**
+ * koalamall css
+ */
+
+.koa-bar-nav{
+	background-color: #EE574F;
+	-webkit-box-shadow: 0 1px 6px #EE574F;
+	box-shadow: 0 1px 6px #EE574F;
+}
+
+.koa-pull-left{
+	color: #FFFFFF;
+}
+.koa-pull-right{
+	color: #FFFFFF;
+}
+
+.koa-title{
+	color: #FFFFFF;font-weight: bold;
+}
+
+.koa-bar-tab{
+	background-color: #494951;
+}
+.koa-tab-item{
+	color: #FFF;
+	font-weight:bold;
+}
+.mui-active{
+	background-color: #313131;
+}
+.mui-active span{
+	color: #FFFFFF; 
+}
+.koa-index-time{
+	background-color:#777777 ;color: #FFFFFF; width: 10px;padding: 3px;
+}
