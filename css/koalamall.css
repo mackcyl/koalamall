@@ -2,6 +2,42 @@
  * koalamall css
  */
 
+ .mui-segmented-control{
+    background-color: #f6f6f6;
+    border: 0;
+}
+.mui-segmented-control .mui-control-item{
+    border: 0;
+}
+.mui-segmented-control .mui-control-item:active,.mui-segmented-control .mui-control-item.mui-active{
+    background-color: #f6f6f6;
+}
+.mui-segmented-control .mui-control-item.mui-active .mui-btn{
+    color: #fff;
+    background-color: #ee574f;
+    border-color: #ee574f;
+}
+.mui-segmented-control .mui-control-item .mui-block{
+    color:#a7a7a7;      
+    margin-top: 5px;
+}
+
+.mui-h5,.mui-h6{
+    margin-top: 0;
+}
+.mui-input-row label{
+    width: 45%;
+}
+.oa-mute{
+    color:#8f8f94;
+}
+
+.mui-control-item .mui-block{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
 .koa-bar-nav{
 	background-color: #EE574F;
 	-webkit-box-shadow: 0 1px 6px #EE574F;

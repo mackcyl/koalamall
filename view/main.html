@@ -8,44 +8,6 @@
 	    <link href="../css/mui.min.css" rel="stylesheet"/>
 	    <link href="../css/koalamall.css" rel="stylesheet"/>
 	    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-		<style>
-		    .mui-segmented-control{
-		        background-color: #f6f6f6;
-		        border: 0;
-		    }
-		    .mui-segmented-control .mui-control-item{
-		        border: 0;
-		    }
-		    .mui-segmented-control .mui-control-item:active,.mui-segmented-control .mui-control-item.mui-active{
-		        background-color: #f6f6f6;
-		    }
-		    .mui-segmented-control .mui-control-item.mui-active .mui-btn{
-		        color: #fff;
-		        background-color: #ee574f;
-		        border-color: #ee574f;
-		    }
-		    .mui-segmented-control .mui-control-item .mui-block{
-		        color:#a7a7a7;      
-		        margin-top: 5px;
-		    }
-		
-		    .mui-h5,.mui-h6{
-		        margin-top: 0;
-		    }
-		    .mui-input-row label{
-		        width: 45%;
-		    }
-		    .oa-mute{
-		        color:#8f8f94;
-		    }
-		
-		    .mui-control-item .mui-block{
-		        overflow: hidden;
-		        text-overflow:ellipsis;
-		        white-space: nowrap;
-		    }
-		
-		</style>
 	</head>
 	<body>
 	<header class="koa-bar-nav mui-bar mui-bar-nav ">
@@ -54,51 +16,9 @@
 		<a class="mui-icon mui-icon-bars koa-pull-right mui-pull-right" ></a>
 		<h1 class="koa-title mui-title">考拉商城</h1>
 	</header>
+	
 	<div class="mui-content">
 		<div class="mui-slider" id="slider">
-		  <div class="mui-slider-group mui-slider-loop" >
-		    <div class="mui-slider-item mui-slider-item-duplicate" >
-		    	<a href="#">
-		    		<img src="../images/slider-1.png" height="200px;"/>
-		    		<p class="mui-slider-title">静静看这世界</p>
-		    	</a>
-		    </div>
-		    <div class="mui-slider-item">
-		    	<a href="#">
-		    		<img src="../images/slider-2.jpg" height="200px;" />
-		    		<p class="mui-slider-title">hello</p>
-		    	</a>
-		    </div>
-		    <div class="mui-slider-item">
-		    	<a href="#">
-		    		<img src="../images/slider-3.jpg" height="200px;"/>
-		    		<p class="mui-slider-title">test</p>
-		    	</a>
-		    </div>
-		    <div class="mui-slider-item">
-		    	<a href="#">
-		    		<img src="../images/slider-1.jpg" height="200px;"/><p class="mui-slider-title">想要一间这样的木屋，静静的喝咖啡</p>
-		    	</a>
-		    </div>
-		    <div class="mui-slider-item">
-		    	<a href="#">
-		    		<img src="../images/slider-1.png" height="200px;" />
-		    		<p class="mui-slider-title">静静看这世界</p>
-		    	</a>
-		    </div>
-		 	<div class="mui-slider-item mui-slider-item-duplicate">
-		    	<a href="#">
-		    		<img src="../images/slider-2.jpg" height="200px;" />
-		    		<p class="mui-slider-title">hello</p>
-		    	</a>
-		    </div>
-		  </div>
-		  <div class="mui-slider-indicator mui-text-right">
-			<div class="mui-indicator mui-active"></div>
-			<div class="mui-indicator"></div>
-			<div class="mui-indicator"></div>
-			<div class="mui-indicator"></div>
-		  </div>
 		</div>
 
 		<div class="mui-segmented-control" id="buttonId">
@@ -152,8 +72,8 @@
 		                <div class="mui-media-body" style="color: red;">$190.00</div></a></li>
 		    </ul>    
 		
-		<div id="output">
-XMLHttpRequest管理网络请求操作，可进行跨域网络数据请求。
+		<div id="output" style="display: ;">
+			XMLHttpRequest管理网络请求操作，可进行跨域网络数据请求。
 		</div>
 		<div style="height: 37px; background-color: #FFFFFF;padding-bottom:5px;align-content: center;">
 	    	<h5 style="padding-left: 10px;background-color:#FFFFFF;padding-top: 10px;color: #000000;align-content: center;">你的专属推荐
@@ -199,11 +119,8 @@ XMLHttpRequest管理网络请求操作，可进行跨域网络数据请求。
 					swipeBack: false,
 				});
 				$.plusReady(function() {
-					loadSeckillProduct();
-					var gallery = mui(".mui-slider");
-				  	gallery.slider({
-				  		interval:10000
-				  	});
+					plus.navigator.closeSplashscreen();
+					loadIndexBillboard(); //加载首页广告
 					//预加载共用父webview
 					var template = $.preload({
 						url:'template.html',
@@ -228,7 +145,6 @@ XMLHttpRequest管理网络请求操作，可进行跨域网络数据请求。
 						},50);
 					});
 					subWebview.hide();
-					plus.navigator.closeSplashscreen();
 					
 					//iOS平台支持侧滑关闭，父窗体侧滑隐藏后，同时需要隐藏子窗体；
 					if($.os.ios){
